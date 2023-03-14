@@ -23,7 +23,7 @@ sourceSets {
 
 task genJaxb {
     ext.sourcesDir = "${buildDir}/generated-sources/jaxb"
-    ext.schema = "src/main/resources/xsd/countries.xsd"
+    ext.schema = "src/main/resources/xsd/ibo.xsd"
 
     outputs.dir sourcesDir
 
@@ -61,7 +61,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'wsdl4j:wsdl4j'
-    // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
     jaxb("org.glassfish.jaxb:jaxb-xjc")

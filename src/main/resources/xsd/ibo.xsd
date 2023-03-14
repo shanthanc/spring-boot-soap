@@ -1,0 +1,40 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.shanthanc.com/ibo"
+           targetNamespace="http://www.shanthanc.com/ibo" elementFormDefault="qualified">
+
+    <xs:element name="getIboRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="iboNumber" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getIboResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ibo" type="tns:ibo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ibo">
+        <xs:sequence>
+            <xs:element name="iboNumber" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="ssn" type="xs:string"/>
+            <xs:element name="address" type="tns:address"/>
+        </xs:sequence>
+    </xs:complexType>
+
+     <xs:complexType name="address">
+            <xs:sequence>
+                <xs:element name="addressLine1" type="xs:string"/>
+                <xs:element name="addressLine2" type="xs:string"/>
+                <xs:element name="city" type="xs:string"/>
+                <xs:element name="state" type="xs:string"/>
+                <xs:element name="country" type="xs:string"/>
+                <xs:element name="zipCode" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+</xs:schema>
