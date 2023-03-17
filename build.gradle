@@ -60,11 +60,18 @@ bootJar {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation("org.springframework.ws:spring-ws-core:3.1.4")
     implementation 'wsdl4j:wsdl4j'
 
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
     jaxb("org.glassfish.jaxb:jaxb-xjc")
+    implementation "com.sun.xml.messaging.saaj:saaj-impl"
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+    testImplementation ("javax.xml.soap:javax.xml.soap-api:1.4.0") {
+        exclude group: 'junit', module: 'junit'
+    }
+
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
